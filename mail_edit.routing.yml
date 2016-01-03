@@ -1,0 +1,28 @@
+# Drupal 8 mail_edit.routing.yml
+
+mail_edit.edit:
+  path: 'admin/config/system/mail-edit'
+  defaults:
+    _title: 'mail_edit'
+    _description: 'Edit mails being sent out by Drupal.'
+    _controller: '\Drupal\mail_edit\Controller\mail_editController::content'
+  requirements:
+    _permission: 'mail_edit_access'
+mail_edit.purge:
+  path: 'admin/config/system/mail-edit/purge/%'
+  defaults:
+  requirements:
+    _permission: 'mail_edit_access'
+mail_edit.edit%:
+  path: 'admin/config/system/mail-edit/%/%'
+  defaults:
+    _title: 'Edit mail edit'
+  requirements:
+    _permission: 'mail_edit_access'
+mail_edit.remove:
+  path: 'admin/config/system/mail-edit/%/%/remove'
+  defaults:
+    _title: 'Remove mail edit'
+  requirements: 
+    _permission: 'mail_edit_access'
+    
